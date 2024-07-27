@@ -1,28 +1,40 @@
 import { cn } from "@/utilities";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { useEffect, useState } from "react";
 
-interface ThemeToggleProps {
-  darkMode: {
-    isDarkMode: boolean;
-    handleThemeToggle: () => void;
-  };
-}
+export function ThemeToggle() {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-export function ThemeToggle({ darkMode }: ThemeToggleProps) {
+  useEffect(() => {
+    if (isDarkMode) {
+      document.getElementById("root")?.classList.add("dark");
+    } else {
+      document.getElementById("root")?.classList.remove("dark");
+    }
+
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
+
+  function handleThemeToggle() {
+    setIsDarkMode((prev) => !prev);
+  }
+
   return (
-    <div onClick={darkMode.handleThemeToggle} className="cursor-pointer">
+    <div onClick={handleThemeToggle} className="cursor-pointer">
       <SunIcon
         className={cn(
           "absolute size-8",
           "transition-opacity duration-100 ease-in-out",
-          darkMode.isDarkMode ? "opacity-0" : "opacity-100",
+          isDarkMode ? "opacity-0" : "opacity-100",
         )}
       />
       <MoonIcon
         className={cn(
           "relative size-8",
           "transition-opacity duration-100 ease-in-out",
-          darkMode.isDarkMode ? "opacity-100" : "opacity-0",
+          isDarkMode ? "opacity-100" : "opacity-0",
         )}
       />
     </div>
