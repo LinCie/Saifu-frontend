@@ -1,3 +1,4 @@
+import { Root } from "@/components";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -5,7 +6,7 @@ import {
 } from "react-router-dom";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<div></div>}></Route>),
+  createRoutesFromElements(<Route path="/" element={<Root />}></Route>),
 );
 
 export default router;
