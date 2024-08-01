@@ -14,6 +14,10 @@ export async function refresh() {
   const response = await axios.post<RefreshResponse>("/api/v1/auth/refresh", {
     refresh_token: refreshToken,
   });
+  const accessToken = response.data.access_token;
 
-  return response.data.access_token;
+  const inOneHour = new Date(new Date().getTime() + 60 * 60 * 1000);
+  Cookies.set("access_token", accessToken, { expires: inOneHour });
+
+  return accessToken;
 }
