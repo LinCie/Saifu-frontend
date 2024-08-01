@@ -1,5 +1,5 @@
-import axios from "axios";
 import Cookies from "js-cookie";
+import { noInterceptorInstance } from "../instances";
 
 interface RefreshResponse {
   access_token: string;
@@ -11,9 +11,12 @@ export async function refresh() {
     throw new Error("refresh token does not exist");
   }
 
-  const response = await axios.post<RefreshResponse>("/api/v1/auth/refresh", {
-    refresh_token: refreshToken,
-  });
+  const response = await noInterceptorInstance.post<RefreshResponse>(
+    "/api/v1/auth/refresh",
+    {
+      refresh_token: refreshToken,
+    },
+  );
   const accessToken = response.data.access_token;
 
   const inOneHour = new Date(new Date().getTime() + 60 * 60 * 1000);

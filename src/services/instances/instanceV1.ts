@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { refresh } from "./auth";
+import { refresh } from "../auth";
 
 const instanceV1 = axios.create({
   baseURL: "/api/v1/",
