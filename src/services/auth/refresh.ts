@@ -12,7 +12,7 @@ export async function refresh() {
   }
 
   const response = await noInterceptorInstance.post<RefreshResponse>(
-    "/api/v1/auth/refresh",
+    "auth/refresh",
     {
       refresh_token: refreshToken,
     },
