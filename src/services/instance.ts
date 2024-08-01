@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export const instance = axios.create({
+export const instanceV1 = axios.create({
   baseURL: "/api/v1/",
 });
