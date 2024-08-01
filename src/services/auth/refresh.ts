@@ -15,5 +15,5 @@ export async function refresh() {
     refresh_token: refreshToken,
   });
 
-  return response.data;
+  return response.data.access_token;
 }
