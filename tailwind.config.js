@@ -58,6 +58,10 @@ export default {
           950: "#450a0d",
         },
       },
+      fontSize: {
+        "root-lg": "1rem",
+        "root": ".85rem",
+      },
     },
   },
   plugins: [],

@@ -5,3 +5,15 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+@layer base {
+  html {
+    @apply text-root;
+  }
+
+  @screen lg {
+    html {
+      @apply text-root-lg;
+    }
+  }
+}

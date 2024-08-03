@@ -10,13 +10,13 @@ export function HeroSection() {
     >
       <h1
         className={cn(
-          "max-w-5xl text-center text-4xl font-bold md:text-6xl",
+          "max-w-6xl text-center text-5xl font-bold",
           "bg-gradient-to-r from-primary-900 to-secondary-600 bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-200",
         )}
       >
         Seamlessly Manage Your Finances Anytime, Anywhere
       </h1>
-      <h2 className="max-w-2xl text-center text-lg md:text-xl">
+      <h2 className="max-w-2xl text-center text-xl">
         Register for free, start managing in seconds
       </h2>
       <button
