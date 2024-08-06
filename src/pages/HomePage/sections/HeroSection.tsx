@@ -1,5 +1,5 @@
 import { cn } from "@/utilities";
-import { button } from "@/variants";
+import { buttonOutlineVariants } from "@/variants";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export function HeroSection() {
@@ -21,7 +21,7 @@ export function HeroSection() {
       </h2>
       <button
         className={cn(
-          button({ color: "primary", size: "medium" }),
+          buttonOutlineVariants({ color: "primary", size: "medium" }),
           "flex items-center gap-2 font-medium",
         )}
       >

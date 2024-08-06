@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
-const buttonVariants = cva(
+export const buttonOutlineVariants = cva(
   [
     "transition",
     "ease-in-out",
@@ -42,9 +42,3 @@ const buttonVariants = cva(
     },
   },
 );
-
-interface ButtonVariants extends VariantProps<typeof buttonVariants> {}
-
-export function button(variants: ButtonVariants) {
-  return buttonVariants(variants);
-}
