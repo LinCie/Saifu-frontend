@@ -11,7 +11,7 @@ export const buttonOutlineVariants = cva(
     "active:scale-95",
     "dark:text-slate-100",
     "dark:outline-slate-100",
-    "dark:hover:text-gray-700",
+    "dark:hover:text-slate-700",
     "dark:hover:bg-slate-100",
   ],
   {

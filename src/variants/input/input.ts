@@ -6,9 +6,9 @@ export const inputVariants = cva(
     "outline",
     "outline-1",
     "bg-transparent",
-    "outline-slate-600",
-    "dark:outline-slate-200",
-    "dark:focus:outline-slate-200",
+    "outline-slate-700",
+    "dark:outline-slate-100",
+    "dark:focus:outline-slate-100",
   ],
   {
     variants: {
