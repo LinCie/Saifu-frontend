@@ -1,3 +1,4 @@
+import React from "react";
 import { cn } from "@/utilities";
 import { inputVariants } from "@/variants";
 import { ComponentPropsWithoutRef } from "react";
@@ -9,23 +10,20 @@ export interface TextInputProps
   isError: boolean;
 }
 
-export function TextInput({
-  color,
-  size,
-  className,
-  isError,
-  ...props
-}: TextInputProps) {
-  return (
-    <input
-      className={cn(
-        inputVariants({
-          color: isError ? "danger" : color,
-          size: size,
-        }),
-        className,
-      )}
-      {...props}
-    />
-  );
-}
+export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
+  ({ color, size, className, isError, ...props }: TextInputProps, ref) => {
+    return (
+      <input
+        className={cn(
+          inputVariants({
+            color: isError ? "danger" : color,
+            size: size,
+          }),
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
