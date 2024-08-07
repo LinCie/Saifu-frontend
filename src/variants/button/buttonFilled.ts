@@ -6,18 +6,19 @@ export const buttonFilledVariants = cva(
     "ease-in-out",
     "duration-150",
     "rounded",
-    "active:scale-95",
+    "hover:opacity-95",
+    "active:opacity-70",
     "text-slate-100",
     "dark:text-slate-700",
     "dark:bg-slate-100",
-    "dark:hover:bg-slate-200"
+    "dark:hover:bg-slate-200",
   ],
   {
     variants: {
       color: {
-        primary: ["bg-primary-900", "hover:bg-primary-950"],
-        secondary: ["bg-secondary-600", "hover:bg-secondary-700"],
-        danger: ["bg-danger-600", "hover:bg-danger-700"],
+        primary: ["bg-primary-900"],
+        secondary: ["bg-secondary-600"],
+        danger: ["bg-danger-600"],
       },
       size: {
         small: ["px-2", "py-1"],
