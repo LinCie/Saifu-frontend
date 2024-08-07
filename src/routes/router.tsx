@@ -1,5 +1,5 @@
 import { Root } from "@/components";
-import { userLoader } from "@/loaders/userLoader";
+import { userLoader } from "@/loaders";
 import { HomePage, SignInPage, SignUpPage } from "@/pages";
 import {
   createBrowserRouter,
