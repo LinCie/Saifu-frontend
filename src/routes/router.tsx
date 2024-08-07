@@ -1,5 +1,5 @@
 import { Root } from "@/components";
-import { HomePage, SignInPage } from "@/pages";
+import { HomePage, SignInPage, SignUpPage } from "@/pages";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -11,6 +11,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route path="/" element={<HomePage />} index />
       <Route path="/signin" element={<SignInPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
     </Route>,
   ),
 );
