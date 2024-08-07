@@ -1,4 +1,5 @@
 import { Root } from "@/components";
+import { userLoader } from "@/loaders/userLoader";
 import { HomePage, SignInPage, SignUpPage } from "@/pages";
 import {
   createBrowserRouter,
@@ -8,7 +9,7 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}>
+    <Route path="/" loader={userLoader} element={<Root />}>
       <Route path="/" element={<HomePage />} index />
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
