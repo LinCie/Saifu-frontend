@@ -1,5 +1,5 @@
 import { User } from "@/entities";
-import { instanceV1 } from "../instances";
+import { defaultInstance } from "../instances";
 
 interface ISignInResponse {
   user: User;
@@ -8,7 +8,7 @@ interface ISignInResponse {
 }
 
 export async function signIn(username: string, password: string) {
-  const response = await instanceV1.post<ISignInResponse>("auth/signin", {
+  const response = await defaultInstance.post<ISignInResponse>("v1/auth/signin", {
     username,
     password,
   });
