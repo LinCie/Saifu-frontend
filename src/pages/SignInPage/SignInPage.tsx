@@ -1,7 +1,10 @@
 import { TextInput, TextLink } from "@/components";
+import { signIn } from "@/services/auth";
 import { cn } from "@/utilities";
 import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 interface IFormInput {
   username: string;
@@ -14,7 +17,18 @@ export function SignInPage() {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    const response = await signIn(data.username, data.password);
+
+    Cookies.set("access_token", response.access_token);
+    Cookies.set("refresh_token", response.refresh_token);
+    Cookies.set("user_id", response.user.id);
+
+    navigate("/");
+  };
 
   return (
     <section
