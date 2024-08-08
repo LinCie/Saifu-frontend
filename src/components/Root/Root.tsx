@@ -7,13 +7,9 @@ import { UserContext } from "@/contexts";
 export function Root() {
   const loader = useLoaderData();
 
-  const [user, setUser] = useState<User | null>(() => {
-    if (loader instanceof User) {
-      return loader;
-    } else {
-      return null;
-    }
-  });
+  const [user, setUser] = useState<User | null>(() =>
+    loader instanceof User ? loader : null,
+  );
 
   return (
     <>
