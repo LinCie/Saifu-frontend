@@ -7,6 +7,7 @@ import { signUp } from "@/services/auth";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "@/contexts";
+import { User } from "@/entities";
 
 interface IFormInput {
   username: string;
@@ -32,7 +33,7 @@ export function SignUpPage() {
     Cookies.set("refresh_token", response.refresh_token);
     Cookies.set("user_id", response.user.id);
 
-    userContext?.setUser(response.user);
+    userContext?.setUser(new User(response.user));
 
     navigate("/");
   };
