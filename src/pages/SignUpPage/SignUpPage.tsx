@@ -31,12 +31,12 @@ export function SignUpPage() {
 
     Cookies.set("access_token", response.access_token, {
       sameSite: "Lax",
-      expires: inOneMonth,
+      expires: inOneHour,
       secure: true,
     });
     Cookies.set("refresh_token", response.refresh_token, {
       sameSite: "Lax",
-      expires: inOneHour,
+      expires: inOneMonth,
       secure: true,
     });
     Cookies.set("user_id", response.user.id, {
