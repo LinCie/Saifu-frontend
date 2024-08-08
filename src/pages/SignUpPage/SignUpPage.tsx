@@ -2,6 +2,11 @@ import { TextInput, TextLink } from "@/components";
 import { cn } from "@/utilities";
 import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Cookies from "js-cookie";
+import { signUp } from "@/services/auth";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "@/contexts";
 
 interface IFormInput {
   username: string;
@@ -16,11 +21,29 @@ export function SignUpPage() {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+
+  const navigate = useNavigate();
+  const userContext = useContext(UserContext);
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    const response = await signUp(data.username, data.password);
+
+    Cookies.set("access_token", response.access_token);
+    Cookies.set("refresh_token", response.refresh_token);
+    Cookies.set("user_id", response.user.id);
+
+    userContext?.setUser(response.user);
+
+    navigate("/");
+  };
 
   const isSimilarPassword = (password: string) => {
     return password === watch("password") || "Password must be similar";
   };
+
+  if (userContext?.user) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <section
