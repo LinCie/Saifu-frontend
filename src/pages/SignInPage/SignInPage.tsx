@@ -4,7 +4,9 @@ import { cn } from "@/utilities";
 import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "@/contexts";
 
 interface IFormInput {
   username: string;
@@ -19,6 +21,7 @@ export function SignInPage() {
   } = useForm<IFormInput>();
 
   const navigate = useNavigate();
+  const userContext = useContext(UserContext);
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     const response = await signIn(data.username, data.password);
@@ -27,8 +30,14 @@ export function SignInPage() {
     Cookies.set("refresh_token", response.refresh_token);
     Cookies.set("user_id", response.user.id);
 
+    userContext?.setUser(response.user);
+
     navigate("/");
   };
+
+  if (userContext?.user) {
+    <Navigate to="/" replace />;
+  }
 
   return (
     <section
