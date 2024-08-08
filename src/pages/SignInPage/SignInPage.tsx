@@ -1,6 +1,6 @@
 import { TextInput, TextLink } from "@/components";
 import { signIn } from "@/services/auth";
-import { cn } from "@/utilities";
+import { cn, inOneHour, inOneMonth } from "@/utilities";
 import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Cookies from "js-cookie";
@@ -27,9 +27,20 @@ export function SignInPage() {
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     const response = await signIn(data.username, data.password);
 
-    Cookies.set("access_token", response.access_token);
-    Cookies.set("refresh_token", response.refresh_token);
-    Cookies.set("user_id", response.user.id);
+    Cookies.set("access_token", response.access_token, {
+      sameSite: "Lax",
+      expires: inOneMonth,
+      secure: true,
+    });
+    Cookies.set("refresh_token", response.refresh_token, {
+      sameSite: "Lax",
+      expires: inOneHour,
+      secure: true,
+    });
+    Cookies.set("user_id", response.user.id, {
+      sameSite: "Lax",
+      secure: true,
+    });
 
     userContext?.setUser(new User(response.user));
 
