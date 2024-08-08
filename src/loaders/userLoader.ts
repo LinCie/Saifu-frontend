@@ -1,3 +1,4 @@
+import { User } from "@/entities";
 import { findOneUser } from "@/services/users";
 import Cookies from "js-cookie";
 
@@ -6,7 +7,8 @@ export async function userLoader() {
 
   if (userId) {
     try {
-      return await findOneUser(userId);
+      const user = await findOneUser(userId);
+      return new User(user);
     } catch (error) {
       console.log(error);
       return null;
