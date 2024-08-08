@@ -6,6 +6,6 @@ export class User extends BaseEntity {
   constructor(user: Partial<User> = {}) {
     super(user);
 
-    this.username = user.username ?? "";
+    this.username = user.username ?? "dummyUsername";
   }
 }
