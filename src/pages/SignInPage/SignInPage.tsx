@@ -48,7 +48,7 @@ export function SignInPage() {
   };
 
   if (userContext?.user) {
-    <Navigate to="/" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (
