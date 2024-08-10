@@ -1,6 +1,5 @@
-import { TextInput, TextLink } from "@/components";
+import { Button, TextInput, TextLink } from "@/components";
 import { cn, inOneHour, inOneMonth } from "@/utilities";
-import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Cookies from "js-cookie";
 import { signUp } from "@/services/auth";
@@ -102,9 +101,7 @@ export function SignUpPage() {
             />
             <small
               className={cn(
-                errors.username
-                  ? "text-destructive"
-                  : "text-inherit",
+                errors.username ? "text-destructive" : "text-inherit",
               )}
             >
               {errors.username
@@ -143,9 +140,7 @@ export function SignUpPage() {
             />
             <small
               className={cn(
-                errors.password
-                  ? "text-destructive"
-                  : "text-inherit",
+                errors.password ? "text-destructive" : "text-inherit",
               )}
             >
               {errors.password
@@ -175,9 +170,7 @@ export function SignUpPage() {
             />
             <small
               className={cn(
-                errors.confirm
-                  ? "text-destructive"
-                  : "text-inherit",
+                errors.confirm ? "text-destructive" : "text-inherit",
               )}
             >
               {errors.confirm
@@ -185,9 +178,7 @@ export function SignUpPage() {
                 : "Confirm your password"}
             </small>
           </div>
-          <button className={cn(buttonFilledVariants())} type="submit">
-            Sign Up
-          </button>
+          <Button type="submit">Sign Up</Button>
         </form>
         <div className="text-center">
           Already have an account?{" "}

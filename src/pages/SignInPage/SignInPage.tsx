@@ -1,7 +1,6 @@
-import { TextInput, TextLink } from "@/components";
+import { Button, TextInput, TextLink } from "@/components";
 import { signIn } from "@/services/auth";
 import { cn, inOneHour, inOneMonth } from "@/utilities";
-import { buttonFilledVariants } from "@/variants";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Cookies from "js-cookie";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -143,9 +142,7 @@ export function SignInPage() {
                 : "Enter your password"}
             </small>
           </div>
-          <button className={cn(buttonFilledVariants())} type="submit">
-            Sign In
-          </button>
+          <Button type="submit">Sign In</Button>
         </form>
         <div className="text-center">
           Don't have an account?{" "}

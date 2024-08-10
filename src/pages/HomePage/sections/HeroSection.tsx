@@ -1,5 +1,5 @@
+import { Button } from "@/components";
 import { cn } from "@/utilities";
-import { buttonOutlineVariants } from "@/variants";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export function HeroSection() {
@@ -19,15 +19,10 @@ export function HeroSection() {
       <h2 className="max-w-2xl text-center text-xl">
         Register for free, start managing in seconds
       </h2>
-      <button
-        className={cn(
-          buttonOutlineVariants({ color: "primary", size: "medium" }),
-          "flex items-center gap-2 font-medium",
-        )}
-      >
+      <Button variant="outline-default" className="gap-1">
         Get Started
         <ArrowRightIcon className="size-4" />
-      </button>
+      </Button>
     </section>
   );
 }
