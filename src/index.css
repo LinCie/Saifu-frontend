@@ -14,10 +14,10 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 218 82% 34%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 262 56% 60%;
-    --secondary-foreground: 0 0% 98%;
+    --primary: 218 82% 34%; /* #10439F */
+    --primary-foreground: 0 0% 98%; /* near white */
+    --secondary: 262 56% 60%; /* #874CCC */
+    --secondary-foreground: 0 0% 98%; /* near white */
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
@@ -42,10 +42,10 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 218 82% 85%;
-    --primary-foreground: 218 82% 15%;
-    --secondary: 262 56% 80%;
-    --secondary-foreground: 262 56% 20%;
+    --primary: 218 82% 65%; /* Brighter dark version */
+    --primary-foreground: 0 0% 15%; /* Very dark for contrast */
+    --secondary: 262 56% 70%; /* Brighter dark version */
+    --secondary-foreground: 0 0% 15%; /* Very dark for contrast */
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
