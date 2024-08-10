@@ -103,7 +103,7 @@ export function SignUpPage() {
             <small
               className={cn(
                 errors.username
-                  ? "text-danger-600 dark:text-danger-200"
+                  ? "text-destructive"
                   : "text-inherit",
               )}
             >
@@ -144,7 +144,7 @@ export function SignUpPage() {
             <small
               className={cn(
                 errors.password
-                  ? "text-danger-600 dark:text-danger-200"
+                  ? "text-destructive"
                   : "text-inherit",
               )}
             >
@@ -176,7 +176,7 @@ export function SignUpPage() {
             <small
               className={cn(
                 errors.confirm
-                  ? "text-danger-600 dark:text-danger-200"
+                  ? "text-destructive"
                   : "text-inherit",
               )}
             >

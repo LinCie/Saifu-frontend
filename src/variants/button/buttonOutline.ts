@@ -10,7 +10,6 @@ export const buttonOutlineVariants = cva(
     "outline-1",
     "hover:opacity-95",
     "active:opacity-70",
-    "dark:text-slate-100",
     "dark:outline-slate-100",
     "dark:hover:text-slate-700",
     "dark:hover:bg-slate-100",
@@ -19,16 +18,15 @@ export const buttonOutlineVariants = cva(
     variants: {
       color: {
         primary: [
-          "text-primary-900",
-          "outline-primary-900",
+          "outline-primary",
           "hover:text-slate-100",
-          "hover:bg-primary-900",
+          "hover:bg-primary",
         ],
         secondary: [
-          "text-secondary-600",
-          "outline-secondary-600",
+          "text-secondary",
+          "outline-secondary",
           "hover:text-slate-100",
-          "hover:bg-secondary-600",
+          "hover:bg-secondary",
         ],
       },
       size: {

@@ -15,7 +15,7 @@ export function Root() {
     <>
       <UserContext.Provider value={{ user, setUser }}>
         <RootHeader />
-        <main className="min-h-screen bg-slate-100 px-2 text-slate-700 dark:bg-gray-700 dark:text-slate-200">
+        <main className="min-h-screen bg-background text-foreground">
           <Outlet />
         </main>
       </UserContext.Provider>

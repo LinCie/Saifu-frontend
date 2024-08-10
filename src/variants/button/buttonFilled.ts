@@ -16,9 +16,9 @@ export const buttonFilledVariants = cva(
   {
     variants: {
       color: {
-        primary: ["bg-primary-900"],
-        secondary: ["bg-secondary-600"],
-        danger: ["bg-danger-600"],
+        primary: ["bg-primary"],
+        secondary: ["bg-secondary"],
+        danger: ["bg-destructive"],
       },
       size: {
         small: ["px-2", "py-1"],

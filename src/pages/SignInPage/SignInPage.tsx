@@ -96,9 +96,7 @@ export function SignInPage() {
             />
             <small
               className={cn(
-                errors.username
-                  ? "text-danger-600 dark:text-danger-200"
-                  : "text-inherit",
+                errors.username ? "text-destructive" : "text-inherit",
               )}
             >
               {errors.username
@@ -137,9 +135,7 @@ export function SignInPage() {
             />
             <small
               className={cn(
-                errors.password
-                  ? "text-danger-600 dark:text-danger-200"
-                  : "text-inherit",
+                errors.password ? "text-destructive" : "text-inherit",
               )}
             >
               {errors.password

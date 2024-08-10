@@ -11,7 +11,7 @@ export function HeroSection() {
       <h1
         className={cn(
           "max-w-6xl text-center text-5xl font-bold",
-          "bg-gradient-to-r from-primary-900 to-secondary-600 bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-200",
+          "bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-200",
         )}
       >
         Seamlessly Manage Your Finances Anytime, Anywhere

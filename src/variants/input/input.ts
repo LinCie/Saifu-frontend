@@ -13,8 +13,8 @@ export const inputVariants = cva(
   {
     variants: {
       color: {
-        primary: ["focus:outline-primary-900"],
-        secondary: ["focus:outline-secondary-600"],
+        primary: ["focus:outline-primary"],
+        secondary: ["focus:outline-secondary"],
         danger: ["focus:outline-danger-600"],
       },
       size: {
