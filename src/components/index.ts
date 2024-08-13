@@ -18,3 +18,5 @@ export {
 } from "./ui/form";
 
 export { Label } from "./ui/label";
+
+export { Input, type InputProps } from "./ui/input";
