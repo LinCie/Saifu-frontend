@@ -25,14 +25,14 @@ export function ThemeToggle() {
     <div onClick={handleThemeToggle} className="cursor-pointer">
       <SunIcon
         className={cn(
-          "absolute size-6",
+          "absolute size-10 md:size-8",
           "transition-opacity duration-100 ease-in-out",
           isDarkMode ? "opacity-0" : "opacity-100",
         )}
       />
       <MoonIcon
         className={cn(
-          "relative size-6",
+          "relative size-10 md:size-8",
           "transition-opacity duration-100 ease-in-out",
           isDarkMode ? "opacity-100" : "opacity-0",
         )}
