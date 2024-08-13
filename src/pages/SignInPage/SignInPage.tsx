@@ -99,6 +99,7 @@ export function SignInPage() {
                   <FormLabel>Username:</FormLabel>
                   <FormControl>
                     <Input
+                      type="text"
                       placeholder="johndoe"
                       autoComplete="off"
                       {...field}
@@ -116,7 +117,7 @@ export function SignInPage() {
                 <FormItem className="flex flex-col">
                   <FormLabel>Password:</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input type="password" {...field} />
                   </FormControl>
                   <FormDescription>Enter your password</FormDescription>
                   <FormMessage />
