@@ -1,24 +1,13 @@
 import { cn } from "@/utilities";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
+import { useTheme } from "./Theme";
 
 export function ThemeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.getElementById("root")?.classList.add("dark");
-    } else {
-      document.getElementById("root")?.classList.remove("dark");
-    }
-
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-  }, [isDarkMode]);
+  const { setTheme, theme } = useTheme();
 
   function handleThemeToggle() {
-    setIsDarkMode((prev) => !prev);
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
   }
 
   return (
@@ -27,14 +16,14 @@ export function ThemeToggle() {
         className={cn(
           "absolute size-10 md:size-8",
           "transition-opacity duration-100 ease-in-out",
-          isDarkMode ? "opacity-0" : "opacity-100",
+          theme === "dark" ? "opacity-0" : "opacity-100",
         )}
       />
       <MoonIcon
         className={cn(
           "relative size-10 md:size-8",
           "transition-opacity duration-100 ease-in-out",
-          isDarkMode ? "opacity-100" : "opacity-0",
+          theme === "dark" ? "opacity-100" : "opacity-0",
         )}
       />
     </div>
