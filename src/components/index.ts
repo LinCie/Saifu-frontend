@@ -18,3 +18,16 @@ export {
 export { Label } from "./ui/label";
 
 export { Input, type InputProps } from "./ui/input";
+
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+} from "./ui/sheet";
