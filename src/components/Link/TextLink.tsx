@@ -7,7 +7,7 @@ export function TextLink({ className, to, children, ...props }: TextLinkProps) {
   return (
     <Link
       to={to}
-      className={cn("text-primary visited:text-secondary", className)}
+      className={cn("text-primary visited:text-muted-foreground", className)}
       {...props}
     >
       {children}
