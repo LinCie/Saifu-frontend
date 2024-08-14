@@ -17,7 +17,7 @@ export function Root() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <UserContext.Provider value={{ user, setUser }}>
           <RootHeader />
-          <main className="min-h-screen bg-background text-foreground">
+          <main className="container min-h-screen bg-background text-foreground">
             <Outlet />
           </main>
         </UserContext.Provider>
