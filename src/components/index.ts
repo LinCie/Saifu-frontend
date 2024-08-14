@@ -31,3 +31,5 @@ export {
   SheetTitle,
   SheetDescription,
 } from "./ui/sheet";
+
+export { Separator } from "./ui/separator";
