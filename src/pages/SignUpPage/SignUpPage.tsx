@@ -10,9 +10,8 @@ import {
   FormMessage,
   Input,
 } from "@/components";
-import { inOneHour, inOneMonth } from "@/utilities";
+import { storeCookieInfo } from "@/utilities";
 import { useForm } from "react-hook-form";
-import Cookies from "js-cookie";
 import { signUp } from "@/services/auth";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -63,19 +62,10 @@ export function SignUpPage() {
   async function onSubmit(data: z.infer<typeof formSchema>) {
     const response = await signUp(data.username, data.password);
 
-    Cookies.set("access_token", response.access_token, {
-      sameSite: "Lax",
-      expires: inOneHour,
-      secure: true,
-    });
-    Cookies.set("refresh_token", response.refresh_token, {
-      sameSite: "Lax",
-      expires: inOneMonth,
-      secure: true,
-    });
-    Cookies.set("user_id", response.user.id, {
-      sameSite: "Lax",
-      secure: true,
+    storeCookieInfo({
+      access_token: response.access_token,
+      refresh_token: response.refresh_token,
+      user_id: response.user.id,
     });
 
     userContext?.setUser(new User(response.user));
