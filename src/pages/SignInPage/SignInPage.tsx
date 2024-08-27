@@ -23,7 +23,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const formSchema = z.object({
   username: z
     .string()
-    .min(5, "Username must be at least 5 characters long")
+    .min(8, "Username must be at least 8 characters long")
     .max(15, "Username must not exceed 15 characters long")
     .regex(
       /^[a-z0-9._]+$/,
