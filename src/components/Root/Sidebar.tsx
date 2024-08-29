@@ -2,6 +2,8 @@ import {
   Bars3Icon,
   ChevronRightIcon,
   UserIcon,
+  HomeIcon,
+  Cog6ToothIcon,
 } from "@heroicons/react/24/solid";
 import {
   Sheet,
@@ -15,7 +17,7 @@ import {
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import { Separator } from "../ui/separator";
 import * as React from "react";
-import { Link, LinkProps } from "react-router-dom";
+import { Link, LinkProps, useLocation } from "react-router-dom";
 import { cn } from "@/utilities";
 import { SignOutContext, UserContext } from "@/contexts";
 
@@ -38,6 +40,7 @@ function SidebarLink({ icon, to, children, ...props }: SidebarLinkProps) {
 }
 
 export function Sidebar() {
+  const location = useLocation();
   const userContext = React.useContext(UserContext);
   const signOutContext = React.useContext(SignOutContext);
 
@@ -56,6 +59,15 @@ export function Sidebar() {
         <div className="flex-1">
           {userContext?.user ? (
             <>
+              {location.pathname.startsWith("/dashboard") ? (
+                <SidebarLink to="/" icon={<HomeIcon />}>
+                  Home
+                </SidebarLink>
+              ) : (
+                <SidebarLink to="/dashboard" icon={<Cog6ToothIcon />}>
+                  Dashboard
+                </SidebarLink>
+              )}
               <SidebarLink
                 onClick={signOutContext?.handleSignOut}
                 to="/signin"

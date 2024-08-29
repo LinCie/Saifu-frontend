@@ -1,6 +1,7 @@
 import { Button } from "@/components";
 import { cn } from "@/utilities";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 export function HeroSection() {
   return (
@@ -19,10 +20,12 @@ export function HeroSection() {
       <h2 className="max-w-2xl text-center text-xl">
         Register for free, start managing in seconds
       </h2>
-      <Button variant="outline-default" className="gap-1">
-        Get Started
-        <ArrowRightIcon className="size-4" />
-      </Button>
+      <Link to="/dashboard">
+        <Button variant="outline-default" className="gap-1">
+          Get Started
+          <ArrowRightIcon className="size-4" />
+        </Button>
+      </Link>
     </section>
   );
 }

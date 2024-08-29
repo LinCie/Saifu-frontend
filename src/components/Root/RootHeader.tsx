@@ -31,13 +31,31 @@ export function RootHeader() {
         </Link>
         <div className="mx-3 flex flex-1 items-center justify-end gap-3">
           {userContext?.user && (
-            <button
-              className="hidden text-sm hover:text-primary/80 md:block"
-              onClick={signOutContext?.handleSignOut}
-            >
-              Sign Out
-            </button>
+            <>
+              {location.pathname.startsWith("/dashboard") ? (
+                <Link
+                  to="/"
+                  className="hidden text-sm hover:text-primary/80 md:block"
+                >
+                  Home
+                </Link>
+              ) : (
+                <Link
+                  to="/dashboard"
+                  className="hidden text-sm hover:text-primary/80 md:block"
+                >
+                  Dashboard
+                </Link>
+              )}
+              <button
+                className="hidden text-sm hover:text-primary/80 md:block"
+                onClick={signOutContext?.handleSignOut}
+              >
+                Sign Out
+              </button>
+            </>
           )}
+
           {headerLinks
             .filter((link) =>
               Boolean(userContext?.user) === link.forLoggedIn ? link : null,
