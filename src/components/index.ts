@@ -1,5 +1,7 @@
 export { Root } from "./Root/Root";
 
+export { DashboardRoot } from "./Root/DashboardRoot";
+
 export { TextLink, type TextLinkProps } from "./ui/textLink";
 
 export { Button, type ButtonProps } from "./ui/button";

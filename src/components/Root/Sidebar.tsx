@@ -4,6 +4,7 @@ import {
   UserIcon,
   HomeIcon,
   Cog6ToothIcon,
+  BookOpenIcon,
 } from "@heroicons/react/24/solid";
 import {
   Sheet,
@@ -83,6 +84,14 @@ export function Sidebar() {
               </SidebarLink>
               <SidebarLink to="/signup" icon={<UserIcon />}>
                 Sign Up
+              </SidebarLink>
+            </>
+          )}
+          {location.pathname.startsWith("/dashboard") && (
+            <>
+              <Separator className="my-8" />
+              <SidebarLink to="/dashboard" icon={<BookOpenIcon />}>
+                Overview
               </SidebarLink>
             </>
           )}

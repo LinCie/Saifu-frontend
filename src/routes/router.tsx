@@ -1,4 +1,4 @@
-import { Root } from "@/components";
+import { DashboardRoot, Root } from "@/components";
 import { userLoader } from "@/loaders";
 import { HomePage, SignInPage, SignUpPage } from "@/pages";
 import {
@@ -13,7 +13,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<HomePage />} index />
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/dashboard"></Route>
+      <Route path="/dashboard" element={<DashboardRoot />}></Route>
     </Route>,
   ),
 );
