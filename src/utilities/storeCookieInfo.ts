@@ -20,6 +20,7 @@ export function storeCookieInfo(data: IStoreCookieInfo) {
   });
   Cookies.set("user_id", data.user_id, {
     sameSite: "Lax",
+    expires: inOneMonth,
     secure: true,
   });
 }
